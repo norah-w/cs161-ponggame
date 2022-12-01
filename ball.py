@@ -23,5 +23,9 @@ class Ball(Turtle):
     def bounce_x(self):
         self.x_step  *= -1
 
-
-
+    def reset_pos(self):
+        """ Reset the ball position to (0, 0)
+        Bounce to the opposite direction horizontally.
+        """
+        self.goto(0, 0)
+        self.bounce_x()
