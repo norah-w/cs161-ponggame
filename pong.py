@@ -22,6 +22,17 @@ screen.onkeypress(r_paddle.go_down, "Down")
 screen.onkeypress(l_paddle.go_up, "w")
 screen.onkeypress(l_paddle.go_down, "s")
 
+# Handle the error that is caused by the while loop
+# which keeps trying to draw on the canvas after the window is destroyed (closed by user)
+# See this StackOverflow post: https://stackoverflow.com/questions/50654793/how-to-detect-x-close-button-in-python-turtle-graphics
+canvas = t.getcanvas()
+root = canvas.winfo_toplevel()
+def on_quit():
+    global game_on
+    game_on = False
+
+root.protocol("WM_DELETE_WINDOW", on_quit)
+
 game_on = True
 while game_on:
     screen.update() # update the screen
