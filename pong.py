@@ -28,9 +28,13 @@ while game_on:
     ball_1.move()
 
     # Detect collision with wall
-    if abs(ball_1.ycor()) > 280: 
+    # Ball is 20 pixels wide
+    # Ball middle point should be at least 20/2 away from the wall
+    if abs(ball_1.ycor()) > 290:
+        # If hit top/bottom edge of the screen
+        # bounce back vertically (y-axis)
         ball_1.bounce_y()
-    if abs(ball_1.xcor()) > 380: 
+    if abs(ball_1.xcor()) > 390: 
         ball_1.bounce_x()
 
     # Detect collision with right paddle
