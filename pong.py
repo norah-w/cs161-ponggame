@@ -41,10 +41,16 @@ while game_on:
     if ball_1.distance(r_paddle) < 50 and ball_1.xcor() > 360:
         ball_1.bounce_x()
 
-    # Detect collision with left paddle, can you do that? :)
+    # Challenge: Detect collision with left paddle :)
 
     
-    # reset position if ball goes out of boundry
+    # Reset position if ball goes out of boundry
+    # Detect if right paddle misses the ball
+    if ball_1.xcor() > 390:
+        ball_1.reset_pos()
+
+    # Challenge: Detect if left paddle misses the ball :)
+
 
     if not game_on:
         break
