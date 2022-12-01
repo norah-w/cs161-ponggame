@@ -34,8 +34,8 @@ while game_on:
         # If hit top/bottom edge of the screen
         # bounce back vertically (y-axis)
         ball_1.bounce_y()
-    if abs(ball_1.xcor()) > 390: 
-        ball_1.bounce_x()
+    # if abs(ball_1.xcor()) > 390: 
+    #     ball_1.bounce_x()
 
     # Detect collision with right paddle
     if ball_1.distance(r_paddle) < 50 and ball_1.xcor() > 360:
